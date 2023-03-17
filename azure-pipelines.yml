@@ -18,8 +18,8 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool: mydemoagent
-    vmImage: ubuntu-latest
+    pool: 
+     vmImage: 'ubuntu-latest' 
     steps:
 
     - task: Docker@2
