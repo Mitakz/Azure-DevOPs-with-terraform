@@ -18,7 +18,7 @@ stages:
   jobs:
   - job: Build
     displayName: Build
-    pool: mydemoagent
+    pool: Azure Pipelines
     # vmImage: ubuntu-latest
     steps:
 
