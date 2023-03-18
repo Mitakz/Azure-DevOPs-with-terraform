@@ -40,7 +40,7 @@ stages:
      pool: mydemoagent
       #vmImage: 'ubuntu-latest'
      variables: 
-     - group: TeraformEnvVars
+     - group: TerraformEnvVars
      steps:
      - script: |
         set -e
