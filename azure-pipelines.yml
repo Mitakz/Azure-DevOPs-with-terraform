@@ -40,8 +40,9 @@ stages:
      pool: mydemoagent
      variables: 
       - group: TerraformEnvVars
-      steps: 
-      - script: |
+     steps: 
+      - script: 
+        - |
           set -e
           terraform init -input=false
           terrafor apply -input=false -auto-approve
