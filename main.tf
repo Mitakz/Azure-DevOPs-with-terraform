@@ -44,7 +44,7 @@ resource "azurerm_container_group" "tfcg_test" {
 
   container {
     name   = "weatherapi"
-    image  = "mitakz/weatherapi"
+    image  = "mitakz/weatherapi:latest"
     cpu    = "1"
     memory = "1"
 
