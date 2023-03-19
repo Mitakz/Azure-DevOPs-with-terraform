@@ -1,5 +1,6 @@
 # Azure-DevOPs-with-terraform
  Creating a weatherAPI .netcore:7 app, containerizing iT TO A Docker image, pushing it to the Docker HUB, initializing terraform and building the container into a Azure Container registry.
+All thsese actions are triggered up on a GitHUB  commit.
 The Process is automated with an Azure DevOps pipeline with a self-hosted agent pool on my windows 10 computer.
 
 Docs: https://learn.microsoft.com/en-us/azure/devops/pipelines/agents/v2-windows?view=azure-devops
