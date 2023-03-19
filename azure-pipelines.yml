@@ -17,8 +17,8 @@ stages:
   jobs:  
   - job: Build
     displayName: Build
-    pool:
-      vmImage: 'ubuntu-latest'
+    pool: mydemoagent
+      
     steps:
     - task: Docker@2
       inputs:
@@ -34,8 +34,8 @@ stages:
   jobs:
   - job: Provision
     displayName: 'Provisioning Container Instance'
-    pool:
-      vmImage: 'ubuntu-latest'
+    pool: mydemoagent
+      
     variables: 
     - group: TerraformEnvVars
     steps:
