@@ -1,6 +1,5 @@
 # Docker
-
-# Build a Docker image
+# Build a Docker image 
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
 trigger:
@@ -15,39 +14,36 @@ variables:
 stages:
 - stage: Build
   displayName: Build image
-  jobs:
+  jobs:  
   - job: Build
     displayName: Build
-    pool: mydemoagent
-    #vmImage: 'ubuntu-latest'
+    pool:
+      vmImage: 'ubuntu-latest'
     steps:
-
     - task: Docker@2
       inputs:
-         containerRegistry: 'mitakz Docker Hub'
-         repository: 'mitakz/weatherapi'
-         command: 'buildAndPush'
-         Dockerfile: '**/Dockerfile'
-         tags: |
+        containerRegistry: 'mitakz Docker Hub'
+        repository: 'mitakz/weatherapi'
+        command: 'buildAndPush'
+        Dockerfile: '**/Dockerfile'
+        tags: |
           $(tag)
-
 - stage: Provision
-  displayName: 'Terraforming in Azure . . .'
+  displayName: 'Terraforming on Azure...'
   dependsOn: Build
-  jobs: 
-   - job: Provision
-     displayName: 'Provisionin Container instance'
-     pool: mydemoagent
-      #vmImage: 'ubuntu-latest'
-     variables: 
-     - group: TerraformEnvVars
-     steps:
-     - script: |
-         set -e
-        
+  jobs:
+  - job: Provision
+    displayName: 'Provisioning Container Instance'
+    pool:
+      vmImage: 'ubuntu-latest'
+    variables: 
+    - group: TeraformEnvVars
+    steps:
+    - script: |
+        set -e
 
-         terraform init -input=false
-         terraform apply -input=false -auto-approve
+        terraform init -input=false
+        terraform apply -input=false -auto-approve
       name: 'RunTerraform'
       displayName: 'Run Terraform'
       env:
@@ -56,6 +52,9 @@ stages:
         ARM_TENANT_ID: $(ARM_TENANT_ID)
         ARM_SUBSCRIPTION_ID: $(ARM_SUBSCRIPTION_ID)
         TF_VAR_imagebuild: $(tag)
+        
+
+
         
 
 
