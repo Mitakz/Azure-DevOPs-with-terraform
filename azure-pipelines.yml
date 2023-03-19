@@ -17,7 +17,7 @@ stages:
   jobs:  
   - job: Build
     displayName: Build
-    pool: Azure Pipelines
+    pool: mydemoagent
       
     steps:
     - task: Docker@2
@@ -34,13 +34,13 @@ stages:
   jobs:
   - job: Provision
     displayName: 'Provisioning Container Instance'
-    pool: Azure Pipelines
+    pool: mydemoagent
       
     variables: 
     - group: TerraformEnvVars
     steps:
     - script: |
-        set
+        
 
         terraform init -input=false
         terraform apply -input=false -auto-approve
