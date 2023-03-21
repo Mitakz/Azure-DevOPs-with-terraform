@@ -4,7 +4,7 @@ All thsese actions are triggered up on a GitHUB  commit.
 The Process is automated with an Azure DevOps pipeline with a self-hosted agent pool on my windows 10 computer.
 ![image](https://user-images.githubusercontent.com/63946278/226641924-9684819f-f3d5-4137-b8d2-0cb99c7f7fd6.png)
 ![image](https://user-images.githubusercontent.com/63946278/226643102-cbf33690-bdf9-42ab-a7ca-e989bdef6492.png)
-![image](https://user-images.githubusercontent.com/63946278/226643670-79419841-9f7d-44d7-a4d4-2c44a1056aea.png)
+
 
 
 
